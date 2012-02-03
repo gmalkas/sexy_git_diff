@@ -1,0 +1,139 @@
+body {
+	font-family: helvetica, sans-serif;
+	font-size: 100%;
+	background-color: #EEE;
+}
+
+a {
+	color: #A62F00;
+}
+
+* { margin: 0; padding: 0; }
+
+p {
+	margin: 1em;
+}	
+
+hr {
+	border: none;
+	border-bottom: 5px solid #2B2B2B;
+	margin: 0 1em;
+}
+
+section.configuration {
+	border-bottom: 5px solid #2B2B2B;
+	background-color: #FFF;
+	padding: 0.5em;
+}
+
+table {
+	margin: 1em;
+	padding: 1em;
+
+	border-radius: 6px;
+
+	box-shadow: 0 0 5px 5px #DDD;
+	background-color: #FFF;
+}
+
+td.other {
+	color: #000; 
+}
+
+td.added {
+	color: #22BB22;
+	background-color: #DDD;
+}
+
+td.removed {
+	color: #EE4444;
+	background-color: #DDD;
+}
+
+td.new_change {
+	font-weight: bold;
+}
+
+td.new_file {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+form {
+	width: 55%;
+	margin:  auto;
+}
+
+form div {
+  margin: 1em;
+}
+
+form textarea {
+	border: none;
+	border-radius: 6px;
+
+	padding: 1em;
+
+	color: #2B2B2B;
+
+	width: 51em;
+
+	background-color: #EEE;
+}
+
+input[type=text] {
+	border: none;
+	border-radius: 6px;
+
+	background-color: #EEE;
+	color: #2B2B2B;
+
+	width: 10em;
+	font-size: 1.2em;
+
+	padding: 0.5em;
+}
+
+input[type=submit] {
+	border: none;
+	border-radius: 6px;
+
+	padding: 0.5em;
+
+	background-color: #2B2B2B;
+
+	color: #EEE;
+	font-weight: bold;
+
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #EEE;
+	color: #2B2B2B;
+}
+
+section.information {
+	margin: 1em;
+	padding: 0.5em;
+
+	box-shadow: 0 0 5px 5px #DDD;
+
+	background-color: #FFF;
+	border-radius: 6px;
+}
+
+h1 {
+  font-weight: normal;
+
+	color: #2B2B2B;
+	margin: 0.5em;
+}
+
+ul {
+	margin: 1em;
+}
+
+li {
+	list-style-type: none;
+}

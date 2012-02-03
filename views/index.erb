@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /> 
+		<title>Sexy Git Diff!</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	</head>
+	<body>
+    <section class="configuration">
+			<form action="/" method="get">
+				<div>
+					<input type="text" name="repository" id="repository" value="<%= h params[:repository] %>" placeholder="From repository..." />
+					<input type="text" name="from_commit" id="from_commit" value="<%= h params[:from_commit] %>" placeholder="From commit..." />
+					<input type="text" name="to_commit" id="to_commit" value="<%= h params[:to_commit] %>" placeholder="To commit..." />
+				</div>
+				<div>
+					<textarea name="files" id="files" placeholder="Files..."><%= h params[:files] %></textarea>
+				</div>
+				<div>
+					<input type="submit" value="Sexy Diffs! &raquo;" />
+					or <a href="/">cancel...</a>
+				</div>
+			</form>
+		</section>
+
+		<% if @repo %>
+			<section class="information">
+				<h1>Last 10 commits...</h1>	
+				<ul>
+					<% @repo.commits.each do |commit| %>
+						<li><strong><%= h commit.message %></strong> - <em><%= commit.sha %></em></li>
+					<% end %>
+				</ul>
+				<% if @diffs.size > 0 %>
+					<p>
+						<%= @diffs.size %> diff(s) from
+						<strong><%= @from_sha %></strong> to <strong><%= @to_sha %></strong>.
+					</p>
+				<% end %>
+			</section>
+
+			<section class="diffs">
+				<% @diff_presenters.each do |d| %>
+					<table>
+						<% d.content.each do |l| %>
+							<tr>
+								<td class="<%= l[:type] %>"><%= h l[:line] %></td>
+							</tr>
+						<% end %>
+					</table>
+					<% if d != @diff_presenters.last %>
+						<hr />
+					<% end %>
+				<% end %>
+			</section>
+		<% end %>
+	</body>
+</html>
