@@ -52,6 +52,8 @@ article.diff .window-button {
 
 article.diff table {
 	padding: 0 1em 1em 1em;
+	margin: 0 1em 1em 1em;
+	border-collapse: collapse;
 }
 
 td.other {
@@ -60,7 +62,7 @@ td.other {
 
 td.added {
 	color: #22BB22;
-	background-color: #DDD;
+	background-color: #EEE;
 }
 
 td.removed {

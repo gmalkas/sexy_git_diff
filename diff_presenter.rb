@@ -1,6 +1,7 @@
 class DiffPresenter
 
 	NEW_FILE = "new_file"
+	OLD_FILE = "old_file"
 	NEW_CHANGE = "new_change" 
 	REMOVED = "removed" 
 	ADDED = "added" 
@@ -16,6 +17,7 @@ class DiffPresenter
 	end
 
 	def self.get_type(line)
+		return OLD_FILE if line =~ /^---/
 		return NEW_FILE if line =~/^\+\+\+/
 	  return ADDED if line =~ /^\+/
 		return REMOVED if line =~ /^-/
