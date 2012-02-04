@@ -26,14 +26,32 @@ section.configuration {
 	padding: 0.5em;
 }
 
-table {
+article.diff {
 	margin: 1em;
-	padding: 1em;
 
 	border-radius: 6px;
 
 	box-shadow: 0 0 5px 5px #DDD;
 	background-color: #FFF;
+
+	min-height: 3em;
+}
+
+article.diff h1 {
+	font-weight: bold;
+	font-size: 2em;
+	padding: 0.5em;
+}
+
+article.diff .window-button {
+	float: right;
+	margin-top: 0.8em;
+
+	cursor: pointer;
+}
+
+article.diff table {
+	padding: 0 1em 1em 1em;
 }
 
 td.other {
@@ -55,8 +73,6 @@ td.new_change {
 }
 
 td.new_file {
-	font-weight: bold;
-	font-size: 2em;
 }
 
 form {
