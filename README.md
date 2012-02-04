@@ -14,6 +14,7 @@ You can specify specific files and a commit range.
 Clone the repository on your machine, and start the Sinatra app :
 
   $ git clone git://github.com/gmalkas/sexy_git_diff.git sexy_git_diff
+
   $ cd sexy_git_diff && ruby ./sexy_diff.rb
 
 ## Source
