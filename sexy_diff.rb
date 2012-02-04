@@ -19,7 +19,7 @@ get '/' do
 		@from_sha = params[:from_commit] || @repo.commits.last.sha
 		@to_sha = params[:to_commit] || @repo.commits.first.sha
 		@diffs = @repo.diff(@from_sha, @to_sha, *files)
-		@diff_presenters = @diffs.map { |d| DiffPresenter.new(d.diff) }
+		@diff_presenters = @diffs.map { |d| DiffPresenter.new(d) }
   end
   erb :index
 end
