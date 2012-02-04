@@ -38,6 +38,11 @@
 						<%= @diffs.size %> diff(s) from
 						<strong><%= @from_sha %></strong> to <strong><%= @to_sha %></strong>.
 					</p>
+					<ul>
+						<% @diffs.each do |d| %>
+							<li><a href="#<%= h d.b_path %>" title="See diff"><%= d.b_path %></a></li>
+						<% end %>
+					</ul>
 				<% end %>
 			</section>
 
@@ -47,7 +52,7 @@
 					  <p class="actions">
 						  <img src="images/minus_alt_16x16.png" alt="-" class="window-button" />
 						</p>
-						<h1><%= d.diff.b_path %></h1>
+						<h1 id="<%= h d.diff.b_path %>"><%= d.diff.b_path %></h1>
 						<table>
 							<% d.content.each do |l| %>
 								<tr>
