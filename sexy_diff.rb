@@ -16,8 +16,8 @@ get '/' do
 		
 		@repo = Grit::Repo.new(repository)
 
-		@from_sha = params[:from_commit] || @repo.commits.last.sha
-		@to_sha = params[:to_commit] || @repo.commits.first.sha
+		@from_sha = (params[:from_commit].empty?) ? @repo.commits.last.sha : params[:from_commit]
+		@to_sha = (params[:to_commit].empty?) ? @repo.commits.first.sha : params[:to_commit]
 		@diffs = @repo.diff(@from_sha, @to_sha, *files)
 		@diff_presenters = @diffs.map { |d| DiffPresenter.new(d) }
   end
